@@ -1,4 +1,3 @@
-
 import joblib
 import pickle
 import numpy as np
@@ -187,7 +186,7 @@ def predict_image(image):
     img_cnt, contours=mask(image)
     cutped=cut(image, contours[0])
     mask_pred = img_cnt
-    with open('model.joblib', 'rb') as pickle_file:
+    with open('./model.joblib', 'rb') as pickle_file:
           clf = joblib.load(pickle_file)
     
     proc=preprocess_table(cutped)
